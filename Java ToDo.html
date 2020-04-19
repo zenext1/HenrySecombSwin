@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input[type=text]{
+        padding: 6px 10px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid grey;
+        border-radius: 4px;
+        box-sizing: center;
+    }
+    form{
+        display: flex;
+        width: 100%;
+        background-color: white;
+        justify-content: center;
+    }
+    
+</style>
+
+<body>
+    <form id="myform" class="header">
+        <input type="text" id="input" placeholder="new item...">
+        <button id="button"> Add </button>
+
+        
+            
+    </form>
+
+    <ul id ="list">
+        
+    </ul>
+
+    
+    
+  
+
+    
+   
+
+   
+</body>
+<script>
+    myform.onsubmit = function(event) {
+        event.preventDefault();
+        var mylist = document.createElement("li");
+        var input = document.getElementById("input").value;
+        var tnode = document.createTextNode(input);
+        mylist.appendChild(tnode);
+        document.getElementById("list").appendChild(mylist);
+    }
+</script>
+
+
+
+</script>
+</html>
