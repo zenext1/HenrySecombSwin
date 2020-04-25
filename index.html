@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<script>
+    function update() {
+        document.getElementById('text').value = cookiecount;
+        document.title = cookiecount + "Cookies";
+        document.getElementById('amountAutoclick').innerHTML = "You own " +  Autoclick + " Auto Clickers";
+        document.getElementById('costAutoclick').innerHTML = ((Autoclick+1) * 12) + " Cookies ";
+    }
+    var cookiecount = 0;
+    var Autoclick = 0;
+    function timer () {
+        cookiecount = cookiecount + Autoclick;
+        update()
+    }
+    setInterval(timer, 1000)
+</script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker</title>
+</head>
+<body>
+    <a href=# onclick="add()"><img src="cookie.png"></a>
+    <br><br>
+    You got:
+    <input type="text" id="text" disabled style= text-align:center>
+    <script id="text/javascript">
+        function add() {
+            cookiecount = cookiecount + 1
+            update()
+           
+        }
+    </script>
+    Cookies
+    <br><br>
+    <p> Buy an Auto Clicker </p>
+    <button><a href="#" onclick="BuyAutoClick()"><img src=mouseclick.png width="30px" height="40px"></a></button>
+
+    <p id="costAutoclick"> cost 12 cookies </p>
+    <p id="amountAutoclick">You own 0 Auto clickers</p>
+
+    <script>
+        function BuyAutoClick() {
+            if (cookiecount >=((Autoclick+1) * 12))  {
+                cookiecount = cookiecount - ((Autoclick+1) * 12);
+                Autoclick = Autoclick + 1;
+                update()
+
+            }
+        }
+    </script>
+   
+
+</body>
+</html>
